@@ -92,22 +92,22 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Left hand
     ESC, 1, 2, 3, 4, 5, EQL,
     TAB, Q, W, E, R, T, FN6,
-    LSFT, A, S, D, F, G,
-    LCTL,Z, X, C, V, B, FN1,
-    FN3, GRV, NO, LALT, LGUI,
+    ESC, A, S, D, F, G,
+    LSFT, Z, X, C, V, B, FN1,
+    LCTL, GRV, NO, LALT, LGUI,
 
     INS, HOME, // top of thumb cluster
-    END, SPC, ENT, LGUI, // right small, left large, right large, bottom small
+    END, SPC, DEL, LGUI, // right small, left large, right large, bottom small
 
     // Right hand
     BSPC, 6, 7, 8, 9, 0, MINS,
-    FN6, Y, U, I, O, P, NUHS,
-    H, J, K, L, SCLN, RSFT,
-    FN1, N, M, COMM, DOT, SLSH, RCTL,
-    RGUI, RALT, QUOT, LBRC, FN3,
+    FN6, Y, U, I, O, P, LBRC,
+    H, J, K, L, SCLN, QUOT,
+    FN1, N, M, COMM, DOT, SLSH, RSFT,
+    RGUI, RALT, RBRC, NUHS, FN3,
 
     PGUP, DEL, // top of thumb cluster
-    PGDN, RGUI, ENT, SPC), // right small, left large, right large, bottom small
+    PGDN, RGUI, ENT, BSPC), // top small, bottom small, left large, right large
   KEYMAP( // Layer 1
     TRNS, F1, F2, F3, F4, F5, F6,
     TRNS, TRNS, TRNS, MPRV, MPLY, MNXT, TRNS,

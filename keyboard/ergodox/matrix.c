@@ -118,45 +118,22 @@ uint8_t matrix_scan(void)
     }
 #endif
 
-#ifdef KEYMAP_CUB
+#ifdef KEYMAP_KLEINMANN
     uint8_t layer = biton32(layer_state);
 
     ergodox_board_led_off();
-    ergodox_left_led_1_off();
-    ergodox_left_led_2_off();
-    ergodox_left_led_3_off();
+    ergodox_right_led_1_off();
+    ergodox_right_led_2_off();
+    ergodox_right_led_3_off();
     switch (layer) {
         case 1:
             // all
-            ergodox_left_led_1_on();
-            ergodox_left_led_2_on();
-            ergodox_left_led_3_on();
+            ergodox_right_led_1_on();
+            ergodox_right_led_2_on();
+            ergodox_right_led_3_on();
             break;
         case 2:
-            // blue
-            ergodox_left_led_2_on();
-            break;
-        case 8:
-            // blue and green
-            ergodox_left_led_2_on();
-            // break missed intentionally
-        case 3:
-            // green
-            ergodox_left_led_3_on();
-            break;
-        case 6:
             ergodox_board_led_on();
-            // break missed intentionally
-        case 4:
-        case 5:
-        case 7:
-            // white
-            ergodox_left_led_1_on();
-            break;
-        case 9:
-            // white+green
-            ergodox_left_led_1_on();
-            ergodox_left_led_3_on();
             break;
         default:
             // none
@@ -233,11 +210,11 @@ uint8_t matrix_key_count(void)
  *
  * Teensy
  * col: 0   1   2   3   4   5
- * pin: F0  F1  F4  F5  F6  F7 
+ * pin: F0  F1  F4  F5  F6  F7
  *
  * MCP23018
  * col: 0   1   2   3   4   5
- * pin: B5  B4  B3  B2  B1  B0 
+ * pin: B5  B4  B3  B2  B1  B0
  */
 static void  init_cols(void)
 {
@@ -326,7 +303,7 @@ static void select_row(uint8_t row)
             // set other rows hi-Z : 1
             mcp23018_status = i2c_start(I2C_ADDR_WRITE);        if (mcp23018_status) goto out;
             mcp23018_status = i2c_write(GPIOA);                 if (mcp23018_status) goto out;
-            mcp23018_status = i2c_write( 0xFF & ~(1<<row) 
+            mcp23018_status = i2c_write( 0xFF & ~(1<<row)
                                   & ~(ergodox_left_led_3<<LEFT_LED_3_SHIFT)
                               );                                if (mcp23018_status) goto out;
         out:

@@ -1,7 +1,7 @@
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KEYMAP( // Layer 0
     // Left hand
-    ESC, 1, 2, 3, 4, 5, EQL,
+    NUBS, 1, 2, 3, 4, 5, EQL,
     TAB, Q, W, E, R, T, FN1,
     ESC, A, S, D, F, G,
     LSFT, Z, X, C, V, B, FN0,
@@ -17,8 +17,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     FN0, N, M, COMM, DOT, SLSH, RSFT,
     RGUI, RALT, RBRC, NUHS, NUBS,
 
-    PGUP, DEL, // top of thumb cluster
-    PGDN, RGUI, ENT, BSPC), // top small, bottom small, left large, right large
+    LEFT, RGHT, // top of thumb cluster
+    UP, DOWN, ENT, BSPC), // top small, bottom small, left large, right large
   KEYMAP( // Layer 1
     FN3, F1, F2, F3, F4, F5, F6,
     TRNS, TRNS, TRNS, MPRV, MPLY, MNXT, FN1,
@@ -55,8 +55,8 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
     TRNS, TRNS, TRNS, TRNS, TRNS,
 
-    LEFT, RGHT,
-    UP, DOWN, TRNS, TRNS),
+    PGUP, DEL,
+    PGDN, RGUI, TRNS, TRNS),
 };
 enum function_id {
   TEENSY_KEY,

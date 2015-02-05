@@ -1,3 +1,5 @@
+// Inspiration from https://gist.github.com/ordnungswidrig/c0e67fa538fc6ec4881d
+
 static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KEYMAP( // Layer 0
     // Left hand
@@ -8,7 +10,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LCTL, GRV, NO, LALT, LGUI,
 
     INS, HOME, // top of thumb cluster
-    END, SPC, DEL, FN4, // right small, left large, right large, bottom small
+    END, SPC, LSFT, FN4, // right small, left large, right large, bottom small
 
     // Right hand
     BSPC, 6, 7, 8, 9, 0, MINS,
@@ -18,7 +20,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     RGUI, RALT, RBRC, NUHS, NUBS,
 
     LEFT, RGHT, // top of thumb cluster
-    UP, DOWN, ENT, BSPC), // top small, bottom small, left large, right large
+    UP, DOWN, FN5, BSPC), // top small, bottom small, left large, right large
   KEYMAP( // Layer 1
     FN3, F1, F2, F3, F4, F5, F6,
     TRNS, TRNS, TRNS, MPRV, MPLY, MNXT, FN1,
@@ -46,17 +48,17 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     TRNS, TRNS, TRNS, TRNS, TRNS,
 
     TRNS, TRNS,
-    TRNS, TRNS, TRNS, TRNS,
+    TRNS, TRNS, DEL, TRNS,
 
     // Right hand
     TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
     TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
-    TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
+    GRV, SCLN, QUOT, RBRC, NUHS, TRNS,
     TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,
     TRNS, TRNS, TRNS, TRNS, TRNS,
 
-    PGUP, DEL,
-    PGDN, RGUI, TRNS, TRNS),
+    TRNS, DEL,
+    PGUP, PGDOWN, TRNS, TRNS),
 };
 enum function_id {
   TEENSY_KEY,
@@ -69,6 +71,8 @@ static const uint16_t PROGMEM fn_actions[] = {
   ACTION_FUNCTION(TEENSY_KEY),
   ACTION_LAYER_MOMENTARY(1),
   ACTION_LAYER_TOGGLE(2),
+  ACTION_LAYER_TAP_KEY(2, KC_ENT),
+  ACTION_LAYER_TAP_KEY(2, KC_ENT),
 };
 
 

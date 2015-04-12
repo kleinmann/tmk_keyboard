@@ -27,19 +27,31 @@
 
 # Firmware
 
-Q: Where to get binaries?
-A:
+#### Where to get binaries?
+https://github.com/cub-uanic/tmk_keyboard/releases
 
-Q: Where to get sources?
-A:
+#### Where to get sources?
+https://github.com/cub-uanic/tmk_keyboard/tree/master
 
-Q: How to compile?
-A:
+#### How to compile?
+
+    cd tmk_keyboard/keyboard/ergodox
+
+    # just to be safe
+    make -f Makefile.lufa clean
+
+    # use one of these
+    make -f Makefile.lufa
+    make -f Makefile.lufa dvorak
+    make -f Makefile.lufa colemak
+    make -f Makefile.lufa workman
+    make -f Makefile.lufa micro
+    make -f Makefile.lufa cub
 
 
 # Layouts
 
-description of layouts in base firmware binaries
+TODO description of layouts in base firmware binaries
 
 
 # Things TO-DO
@@ -53,4 +65,8 @@ description of layouts in base firmware binaries
 - [ ] command to debug all LEDs (on/off/blink)
 - [ ] proper (in-core) implementation of DEBUG_MATRIX_SCAN_RATE (non-Ergodox specific)
 - [ ] proper (in-core) support for per-layer fn_actions[]
+- [ ] create one-handed layouts, see
+        http://half-qwerty.com/
+        https://geekhack.org/index.php?topic=60165.0
+        https://www.massdrop.com/ext/ergodox/?hash=e097c3b9932179055023d47e48b25f1d
 

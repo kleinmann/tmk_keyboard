@@ -135,6 +135,10 @@ uint8_t matrix_scan(void)
         case 2:
             ergodox_board_led_on();
             break;
+        case 3:
+            ergodox_right_led_1_on();
+            ergodox_board_led_on();
+            break;
         default:
             // none
             break;
